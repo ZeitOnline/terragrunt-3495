@@ -4,9 +4,6 @@ variable "state_file" {
 }
 
 terraform {
-  backend "local" {
-    path = var.state_file
-  }
   required_providers {
     null = {
       source = "hashicorp/null"

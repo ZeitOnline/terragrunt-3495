@@ -1,16 +1,9 @@
-
-terraform {
-
+include "root" {
+  path   = find_in_parent_folders()
 }
 
 variable "state_file" {
   type = string
-}
-
-terraform {
-  backend "local" {
-    path = var.state_file
-  }
 }
 
 variable "out_str" {
