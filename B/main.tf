@@ -7,6 +7,11 @@ terraform {
   backend "local" {
     path = var.state_file
   }
+  required_providers {
+    null = {
+      source = "hashicorp/null"
+    }
+  }
   encryption {
     key_provider "pbkdf2" "this" {
       passphrase = "correct-horse-battery-staple"
@@ -33,6 +38,8 @@ terraform {
     }
   }
 }
+
+provider "null" {}
 
 output "out" {
   value = "test"
